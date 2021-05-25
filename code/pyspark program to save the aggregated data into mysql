@@ -1,0 +1,11 @@
+jdbcUrl="jdbc:mysql://localhost:3306/corona"
+df.select("location","country_code", "latitude","longitude","confirmed","dead","recovered").write.format("jdbc") \
+  .mode("overwrite") \
+  .option("url", jdbcUrl) \
+  .option("dbtable", "covid") \
+  .option("user", "root") \
+  .option("password", "*****") \
+  .save()
+  
+  
+  
